@@ -1,0 +1,12 @@
+body {
+    font-family: 'Lora', serif;
+}
+
+h1 a {
+    color: red;
+}
+
+.card-body {
+    font-size: small;
+    color: red;
+}

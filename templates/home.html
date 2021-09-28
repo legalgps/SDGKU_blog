@@ -1,12 +1,27 @@
 {% extends 'base.html' %}
 
-{% block title %}Posts{% endblock title %}
+{% block title %}Home{% endblock title %}
 
 {% block content %}
-    <h1>Posts</h1>
-    <ul>
     {% for post in post_list %}
-        <li>{{ post.title }}</li>
+        <div class="card">
+            <div class="card-header">
+                <span class="font-weight-bold">
+                    <a href="{url 'post_detail' post.pk %}"></a>
+                        <h5>{{post.title}}</h5>
+                    </a>
+                </span> &middot;
+                <span class="text-muted">
+                    by Chris Daming</span>
+            </div>
+            <div class="card-body">
+                {{article.body}}
+            </div>
+            <div class="card-footer text-center text-muted">
+                <a href="{% url 'post_edit' post.id %}">Edit</a>
+                <a href="{% url 'post_delete' post.id %}">Delete</a>
+            </div>
+        </div>
+        <br /> 
     {% endfor %}
-    </ul>
 {% endblock content %}
